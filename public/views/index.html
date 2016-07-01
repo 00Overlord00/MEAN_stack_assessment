@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="../vendors/angular.min.js" charset="utf-8"></script>
+    <script src="../scripts/script.js" charset="utf-8"></script>
+    <script src="" charset="utf-8"></script>
+    <title>Hero Database</title>
+  </head>
+  <body "displayArea" ng-controller = "assembleController">
+<h1>BEHOLD: So Many Heroes...</h1>
+<div ng-repeat = "hero in heroes">
+<h4>{{ hero.alias }},</h4> <p>{{ hero.power }}</p>
+<p>Secret Identity: {{ hero.first }}, {{ hero.last }}</p>
+<p>City: {{ hero.city }}</p>
+</div>
+<div id = "entry">
+  <h2>Enter a new hero...</h2>
+  <form>
+  <input type="text" ng-model = "heroName" placeholder = "Alias">
+  <input type="text" ng-model = "nameFirst" placeholder = "First Name">
+  <input type="text" ng-model = "nameLast"placeholder = "Last Name">
+  <input type="text" ng-model = "city" placeholder = "City">
+  <select id = "abilities">
+    <option ng model = "abilities" placeholder>Select Abilities</option>
+    <option ng-model = "invisibility">Invisibility</option>
+    <option ng-model = "flight">Flight</option>
+    <option ng-model = "superSpeed">Super Speed</option>
+    <option ng-model = "heatVision">Heat Vision</option>
+    <option ng-model = "superStrength">Super Strength</option>
+    <option ng-model = "reGen">Accelerated Healing</option>
+    <option ng-model = "powerBlast">Power Blast</option>
+    <option ng-model = "animalAffinity">Animal Affinity</option>
+  </select>
+  <button ng-click = "saveHero()" type="button" name="button">Add Hero</button>
+
+
+</form>
+</div>
+  </body>
+</html>
